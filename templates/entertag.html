@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter tags</title>
+</head>
+<body>
+
+	{% if message %}
+  		<h2>{{message}}!</h2>
+	{% endif %}
+
+	{% if entertag %}
+
+		<form method="post" enctype="multipart/form-data" action="/tagrecommendation">
+        	<label for="tag_name">Please enter the tags in your mind:</label>
+        	<input type="text" name="tag_name" placeholder='tag name' required='true' /><br />
+			<input type="submit" value="Search" />
+    	</form>
+
+    {% endif %}
+
+    {% if tags %}
+    	{% for tag in tags %}
+    		{{tag}}
+
+    	{% endfor %}
+
+    {% endif %}
+
+    <ul>
+        <li><a href='/logout'>Logout</a></li>
+        <li><a href='/menu'>Main menu</a></li>
+    </ul>
+
+</body>
+</html>

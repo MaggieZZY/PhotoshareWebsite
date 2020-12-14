@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add tags</title>
+</head>
+<body>
+	{% if message %}
+  		<h2>{{message}}!</h2>
+	{% endif %}
+
+	
+	<form method="post" enctype="multipart/form-data" action="/addtag/{{albumid}}/{{photoid}}">
+        <label for="tag_name">Please add a tag:</label>
+        <input type="text" name="tag_name" placeholder='tag name' required='true' /><br />
+		<input type="submit" value="Create" />
+    </form>
+
+    <ul>
+		<li><a href='/viewalbums/{{albumid}}'>Back</a> </li> 
+		<li><a href='/logout'>Logout</a></li>
+		<li><a href='/menu'>Main menu</a></li>
+	</ul>
+</body>
+</html>

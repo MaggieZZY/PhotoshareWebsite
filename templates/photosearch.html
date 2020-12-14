@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search for photos by tags</title>
+</head>
+<body>
+
+    {% if message %}
+        <h2>{{message}}!</h2>
+    {% endif %}
+    
+
+	{% if photos %}
+		<ul>
+    	{% for photo in photos %}
+    		<li><h4>{{photo[3]}}</h4><br>
+        	<img src='data:image/png;base64, {{photo[2]}}', style='width:400px; height:auto'/></li><br>
+            <a href="/viewtags/{{photo[1]}}/{{photo[0]}}">View tags</a><br>
+            <a href="/viewcomments/{{photo[1]}}/{{photo[0]}}">View comments</a><br>
+            <a href="/viewlikes/{{photo[1]}}/{{photo[0]}}">View likes</a><br>
+    	{% endfor %}
+    	</ul>
+
+
+	{% endif %}
+
+    {% if photosearch %}
+
+	<form method="post" enctype="multipart/form-data" action="/photosearch">
+        <label for="tag_name">Please enter the tag name:</label>
+        <input type="text" name="tag_name" placeholder='tag name' required='true' /><br />
+		<input type="submit" value="Search" />
+    </form>
+
+    {% endif %}
+
+    <ul>
+        <li><a href='/logout'>Logout</a></li>
+        <li><a href='/menu'>Main menu</a></li>
+    </ul>
+
+</body>
+</html>

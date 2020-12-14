@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View user profile</title>
+</head>
+<body>
+
+	<h2>Here is the user's profile !</h2>
+
+<!-- 	<img src='data:image/png;base64,{{profile[0][8]}}'/> -->
+
+	{% if profile %}
+		
+		<h4>Email: {{profile[0][0]}}</h4>
+		<h4>First Name: {{profile[0][1]}}</h4>
+		<h4>Last Name: {{profile[0][2]}}</h4>
+		<h4>Birthday: {{profile[0][3]}}</h4>
+		<h4>Genedr: {{profile[0][4]}}</h4>
+		<h4>Hometown: {{profile[0][5]}}</h4>
+		<h4>Biography: {{profile[0][6]}}</h4>
+
+	{% endif %}
+
+
+
+
+
+	<a href="/addfriend/{{result}}">Add friend</a>
+
+	<ul>
+		<li><a href='/searchpeople'>Back</a></li>
+		<li><a href='/logout'>Logout</a></li>
+		<li><a href='/menu'>Main menu</a></li>
+	</ul>
+
+</body>
+</html>

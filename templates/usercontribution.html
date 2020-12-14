@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Contribution</title>
+</head>
+<body>
+
+	{% if message %}
+  		<h2>{{message}}!</h2>
+	{% endif %}
+
+	{% if usercontribution %}
+  		{% for user in usercontribution %}
+        	<h4>{{user[0]}} {{user[1]}}</h4>
+        	
+    	{% endfor %}
+	{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Profile</title>
+</head>
+<body>
+
+	<h2>Here is your profile !</h2>
+
+	<img src='data:image/png;base64,{{profile[0][8]}}', style='width:400px; height:auto'/>
+
+	<form method="post" enctype="multipart/form-data" action="/profile">
+
+    	<label for="photo">Change your profile picture:</label>
+        <input type="file" name="photo" required='true' /><br />
+        <input type="submit" value="Upload" />
+    </form>
+
+	{% if profile %}
+		
+		<h4>Your email is: {{profile[0][0]}}</h4>
+		<h4>Your password is: {{profile[0][1]}}</h4>
+		<h4>Your first name is: {{profile[0][2]}}</h4>
+		<h4>Your last name is: {{profile[0][3]}}</h4>
+		<h4>Your birthday is: {{profile[0][4]}}</h4>
+		<h4>Your gender is: {{profile[0][5]}}</h4>
+		<h4>Your hometown is: {{profile[0][6]}}</h4>
+		<h4>Your biography is: {{profile[0][7]}}</h4>
+
+
+	{% endif %}
+
+
+
+	<ul>
+		<li><a href='/logout'>Logout</a></li>
+		<li><a href='/menu'>Main menu</a></li>
+	</ul>
+
+</body>
+</html>

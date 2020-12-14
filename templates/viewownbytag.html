@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View own photos by tag</title>
+</head>
+<body>
+
+	{% if message %}
+    	<h2>{{message}}!</h2>
+  	{% endif %}
+
+
+  	{% if tags %}
+		{% for tag in tags %}
+  			<h2>{{tag[0]}}</h2>
+
+  			<form method="post" action="/viewownbytag/{{tag[0]}}">
+        		<button name="tag">Check your photos with this tag</button>
+			</form>
+
+  			<form method="post" action="/viewotherbytag/{{tag[0]}}">
+        		<button name="tag">Check what other users have for this tag</button>
+			</form>
+		{% endfor %}
+	{% endif %}
+
+
+
+</body>
+</html>

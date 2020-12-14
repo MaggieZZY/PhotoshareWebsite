@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View likes</title>
+</head>
+<body>
+	{% if message %}
+  		<h2>{{message}}!</h2>
+	{% endif %}
+
+	<h2>There is a total of {{numberoflikes}} likes</h2>
+	{% if user_name %}
+
+		{% for user in user_name %}
+		<ul>
+			<li>{{user}}</li>
+
+		</ul>
+
+		{% endfor %}
+
+	{% endif %}
+
+	<form method="post" action="/makelike/{{albumid}}/{{photoid}}">
+        <!-- <input type="submit" name="like" required='true' /><br /> -->
+        <button name="like">Like this photo</button>
+	</form>
+
+	<ul>
+		<li><a href='/logout'>Logout</a></li>
+		<li><a href='/menu'>Main menu</a></li>
+	</ul>
+
+
+	
+</body>
+</html>

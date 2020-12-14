@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search for New Friends</title>
+</head>
+<body>
+
+	<h1>Seach for New Friends</h1>
+
+	{% if results %}
+	<h2>Here's Your Searching Results</h2>
+    	<ul>
+    	{% for result in results %}
+    		<li>
+      			{{result[1]}} 
+            {{result[2]}} 
+            <a href="/viewprofile/{{result[0]}}">View profile</a>
+            <!-- <a href="/addfriend/{{result[0]}}">Add friend</a> -->
+    		</li>
+    	{% endfor %}
+    	</ul>
+
+	{% endif %}
+
+
+
+	 <form method="post" enctype="multipart/form-data" action="/searchpeople">
+	 	<label for="QUERY">Enter your friend's email address:</label>
+      <input type="text" name="QUERY" /> 
+      <input type="submit" name="Search" /> <!-- Execute the action -->
+	 </form>
+</body>
+</html>

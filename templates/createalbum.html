@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create New Album</title>
+</head>
+<body>
+	<div class="title">
+     	<h2>Create a new album</h2>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" action="/createalbum">
+        <label for="album_name">Please select a name for the album:</label>
+        <input type="text" name="album_name" placeholder='album name' required='true' /><br />
+       	<div class="form-group">
+            <label for="doc">Please select date of creation:</label>
+			<input type="date" name="doc" class="form-control" placeholder="date of creation (format:1994-12-12)" >
+		</div>
+		<input type="submit" value="Create" />
+    </form>
+
+    <ul>
+        <li><a href='/logout'>Logout</a></li>
+        <li><a href='/menu'>Main menu</a></li>
+    </ul>
+
+
+</body>
+</html>

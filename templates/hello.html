@@ -1,0 +1,50 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Page</title>
+</head>
+<body>
+
+
+  {% if message %}
+    <h1>{{message}}!</h1>
+  {% endif %}
+
+  <title>Photoshare</title>
+
+  {% if name %}
+    <h1>Hello {{ name }}!</h1>
+  {% endif %}
+
+
+  {% if message is none %}
+    <p>You should <a href='/login'>login!</a></p>
+
+  {% else %}
+    <h3>Let's <a href='/menu'>Get Started</a></h3>
+    
+
+  {% endif %}
+
+
+
+  {% if photos %}
+      <ul>
+      {% for photo in photos %}
+          <li><h4>{{photo[2]}}</h4><br>
+          <img src='data:image/png;base64,{{photo[1]}}' style='width:400px; height:auto'/></li>
+      {% endfor %}
+      </ul>
+
+    {% else %}
+      <h2>Looks like there's no photo in this album yet</h2>
+
+  {% endif %}
+
+
+
+</body>
+</html>
+
+

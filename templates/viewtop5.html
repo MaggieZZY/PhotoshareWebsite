@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View top 5 popular tags</title>
+</head>
+<body>
+
+	{% if message %}
+  		<h2>{{message}}!</h2>
+	{% endif %}
+
+	{% if tags %}
+		{% for tag in tags %}
+  			<h2>{{tag[0]}}</h2>
+  			<form method="post" action="/photosearch/{{tag[0]}}">
+        		<button name="tag">Check this tag</button>
+			</form>
+		{% endfor %}
+	{% endif %}
+
+	<ul>
+		<li><a href='/logout'>Logout</a></li>
+		<li><a href='/menu'>Main menu</a></li>
+	</ul>
+
+</body>
+</html>
