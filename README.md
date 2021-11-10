@@ -1,7 +1,7 @@
 # Photoshare
 This is an photoshare application built in Python, Flask and MySQL database that has features such as account creation, album management, photo search and user interactions. Also implemented photo and tag recommendation functions using python dictionary.
 
-ER diagram
+
 <img width="765" alt="Screen Shot 2021-11-09 at 8 19 55 PM" src="https://user-images.githubusercontent.com/22482899/141032058-82077ab0-deac-480a-87bf-e86125302401.png">
 
 
